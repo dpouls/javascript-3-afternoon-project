@@ -10,20 +10,18 @@
 
 // Do not edit the code below.
 var carDetails = {
-  color: 'red',
-  make: 'toyota',
-  model: 'tacoma',
+  color: "red",
+  make: "toyota",
+  model: "tacoma",
   year: 1994
-}
+};
 // Do not edit the code above.
 
 /*
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
-
+var { color, make, model, year } = carDetails;
 //Code Here
-
-
 
 ////////// PROBLEM 2 //////////
 
@@ -33,15 +31,14 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting(obj) {
   //Code Here
-  
+  var { firstName, lastName, title } = obj;
+
   // Do not edit the code below.
-  return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
+  return "Hello, " + title + " " + firstName + " " + lastName + "!";
   // Do not edit the code above.
 }
-
-
 
 ////////// PROBLEM 3 //////////
 
@@ -55,7 +52,10 @@ function greeting( obj ) {
 
 //Code Here
 
-
+function totalPopulation(obj) {
+  var { utah, california, texas, arizona } = obj;
+  return utah + california + texas + arizona;
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -68,8 +68,12 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-
+function ingredients(obj) {
+  var { carb, fat, protein } = obj;
+  var macro = [];
+  macro.push(carb, fat, protein);
+  return macro;
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -84,10 +88,11 @@ function greeting( obj ) {
   The object properties will be named first, second, and third and their values will be numbers.
   Find the smallest number of the three and return that number.
 */
-
+function largeNumbers({ first, second, third }) {
+  var min = Math.min(first, second, third);
+  return min;
+}
 //Code Here
-
-
 
 ////////// PROBLEM 6 //////////
 
@@ -96,7 +101,13 @@ function greeting( obj ) {
   The object properties will be named a, b, and c and their values will be arrays of numbers.
   Find the longest array and return that array.
 */
-
-//Code Here
-
-
+function numberGroups({ a, b, c }) {
+  let arrays = [a, b, c];
+  let longest = [];
+  arrays.forEach((array, index) => {
+    if (array.length > longest.length) {
+      longest = arrays[index];
+    }
+    
+  });return longest;
+}

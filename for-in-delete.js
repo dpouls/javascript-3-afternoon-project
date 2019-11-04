@@ -40,7 +40,10 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  var pickle = []
+  for (let property in obj){
+    pickle.push(obj[property])
+  }return pickle.join("")
 }
 
 
@@ -54,7 +57,13 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function greaterThan10(obj){
+  for(let key in obj){
+    if(obj[key] > 10){
+      obj[key] = 0;
+    }
+  }return obj;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -66,7 +75,11 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function double(obj){
+  for ( let key in obj) {
+    obj[key] = obj[key] * 2
+  } return obj;
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -80,6 +93,14 @@ function showValues( obj ) {
 */
 
 //Code Here
+function secrets(obj){
+  var pickleRick = "";
+  for (let llave in obj){
+    if(llave.startsWith("sh")){
+      pickleRick += obj[llave];
+    } 
+  }return pickleRick;
+}
 
 
 
@@ -109,7 +130,13 @@ function showValues( obj ) {
   Write a function called removePassword that takes in an object.
   Delete the property password and return the object.
 */
-
+function removePassword(obj){
+  for (let key in obj){
+    if(key === "password"){
+      delete obj[key];
+    }
+  } return obj;
+}
 //Code Here
 
 
@@ -132,6 +159,13 @@ var deleteTheBigNumbers = {
 //Code Here
 
 
+  for (let key in deleteTheBigNumbers) {
+    if(deleteTheBigNumbers[key] > 100){
+      delete deleteTheBigNumbers[key];
+    }
+  }
+
+
 
 ////////// PROBLEM 7 //////////
 
@@ -144,7 +178,13 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
-
+function startsWithK(obj){
+  for (let key in obj){
+    if(key.startsWith('k')){
+      delete obj[key];
+    }
+  }return obj;
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -156,7 +196,18 @@ var deleteTheBigNumbers = {
 
   (hint: the method includes() may be of use...)
 */
-
+// const obj=  {
+//   prop1='sefsdfdf',
+//   prop2='dsfd'
+// }
 //Code Here
+function hiddenTreasure(obj){
+  for (let key in obj){
+    if(!obj[key].includes('treasure')){
+      delete obj[key];
+    } 
+  } return obj;
+
+}
 
 
